@@ -17,8 +17,6 @@ namespace HttpTriggerSample
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "HelloWorld/{name}")] HttpRequest req,string name,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-
             string message = req.Query["message"];
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync().ConfigureAwait(false);
