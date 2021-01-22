@@ -23,7 +23,7 @@ namespace HttpTriggerSample
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync().ConfigureAwait(false);
             dynamic data = JsonConvert.DeserializeObject(requestBody);
-            message = message ?? data?.message;
+            message ??= data?.message;
 
             string responseMessage = string.IsNullOrEmpty(message)
                 ? $"Hello, { name}. You don't have hello world message yet. Pass a message in the query string or in the request body to your hello world message."
