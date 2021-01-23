@@ -9,7 +9,7 @@ namespace BlogStorageTrigger
     public static class Function1
     {
         [FunctionName("ReadBlobFile")]
-        public static void Run([BlobTrigger("samples-workitems/{name}", Connection = "")] Stream myBlob, string name, ILogger log)
+        public static void Run([BlobTrigger("samples-workitems/{name}", Connection = "ConnectionStrings:AzureWebJobsStorage")] Stream myBlob, string name, ILogger log)
         {
             StreamReader streamReader = new StreamReader(myBlob);
             string fileContent = streamReader.ReadToEnd();
