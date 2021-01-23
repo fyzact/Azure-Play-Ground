@@ -23,7 +23,14 @@
       "collectionName": "todo",
       "connectionStringSetting": "CosmosDBConnection",
       "id": "{Query.id}",
-     "partitionKey":"{Query.id}"
+      "partitionKey": "{Query.id}"
+    },
+    {
+      "type": "queue",
+      "direction": "out",
+      "name": "outputQueueItem",
+      "queueName": "outqueue",
+      "connection": "AzureWebJobsStorage"
     }
   ]
 }
