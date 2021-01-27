@@ -1,0 +1,2 @@
+az appservice plan create -g "resoursegroup" -n "name" --sku "hostin plan F!,S1,P1" -l "location" --number-of-workers "instance number"
+az webapp create -p "appservice plann name" -g "reosurce group" -n "webb app name" -l 
