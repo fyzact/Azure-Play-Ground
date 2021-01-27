@@ -1,2 +1,3 @@
-az appservice plan create -g "resoursegroup" -n "name" --sku "hostin plan F!,S1,P1" -l "location" --number-of-workers "instance number"
-az webapp create -p "appservice plann name" -g "reosurce group" -n "webb app name" -l 
+az login
+az appservice plan create -g "resoursegroup" -n "name" --sku "hosting plan F!,S1,P1" -l "location" --number-of-workers "instance number"
+az webapp create -p "appservice plan name" -g "reosurce group" -n "webb app name" -l (it's mean want to deploy git url)
