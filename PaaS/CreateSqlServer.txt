@@ -1,0 +1,4 @@
+Create sql server
+az sql server create -n sqlservername -l location(ukwest) -g resource-gruopname -u userName -p password
+Create Db
+az sql db create -n dbName -s sqlserverName -g resource-gruopname -e Free (sql sqlver  edition)
