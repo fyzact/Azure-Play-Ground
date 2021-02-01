@@ -2,6 +2,7 @@ Create sql server
 az sql server create -n sqlservername -l location(ukwest) -g resource-gruopname -u userName -p password
 Create Db
 az sql db create -n dbName -s sqlserverName -g resource-gruopname -e Free (sql sqlver  edition)
-what edition available in location
+show  sql server edition list in location
 az sql db list-editions -o  table(list as table) -l ukwest(location)
-
+sql server available list in location
+az sql db list-editions -a(get only available) -o  table(list as table) -l ukwest(location)
