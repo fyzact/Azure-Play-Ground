@@ -6,3 +6,6 @@ show  sql server edition list in location
 az sql db list-editions -o  table(list as table) -l ukwest(location)
 sql server available list in location
 az sql db list-editions -a(get only available) -o  table(list as table) -l ukwest(location)
+Add allow ip list to connect sql db
+az sql serve firewall-rule create -n MyClientRule -s dbservername -g resource-groupname --start-ip-address 
+79.66.217.11 --end-ip-address 79.66.217.11
