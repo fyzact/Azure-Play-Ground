@@ -1,0 +1,2 @@
+Create Cosmosdb account 
+az cosmosdb create -n tetriscosmosdb -g rg_dbtest --locations RegionName=uksouth failoverPriority=0 --locations regionName=ukwest failoverPriority=1
