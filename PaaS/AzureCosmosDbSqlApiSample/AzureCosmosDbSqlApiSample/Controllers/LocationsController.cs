@@ -21,12 +21,6 @@ namespace AzureCosmosDbSqlApiSample.Controllers
             locationContainer = cosmosClient.GetContainer("tetriscdb", "tetrisLocations");
         }
 
-        [HttpGet]
-        public IActionResult Get(string id)
-        {
-            return Ok("");
-        }
-
         [HttpPost]
         public async Task<IActionResult> Post(Location location)
         {
@@ -43,6 +37,22 @@ namespace AzureCosmosDbSqlApiSample.Controllers
             while (iterator.HasMoreResults)
             {
                 var pageOfLocation =await iterator.ReadNextAsync();
+                locations.AddRange(pageOfLocation.ToList());
+            }
+
+            return Ok(locations);
+        }
+        [HttpGet("{country}")]
+        public async Task<IActionResult> Get(string country)
+        {
+            var iterator = locationContainer.GetItemQueryIterator<Location>(requestOptions: new QueryRequestOptions
+            {
+                PartitionKey = new PartitionKey(country)
+            });
+            List<Location> locations = new List<Location>();
+            while (iterator.HasMoreResults)
+            {
+                var pageOfLocation = await iterator.ReadNextAsync();
                 locations.AddRange(pageOfLocation.ToList());
             }
 
