@@ -58,5 +58,20 @@ namespace AzureCosmosDbSqlApiSample.Controllers
 
             return Ok(locations);
         }
+
+        [HttpGet("countries")]
+        public async Task<IActionResult> Countries()
+        {
+            var iterator =  locationContainer.GetItemQueryIterator<string>(queryText: "select distinct value l.country from tetrisLocations l");
+            List<string> countries = new List<string>();
+            while (iterator.HasMoreResults)
+            {
+               var pagesCountry= await iterator.ReadNextAsync();
+                countries.AddRange(pagesCountry);
+            }
+
+            return Ok (countries);
+
+        }
     }
 }
