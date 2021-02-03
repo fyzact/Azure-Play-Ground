@@ -23,6 +23,13 @@ namespace AzureStorageBlobSample.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Index(UploadFileModel uploadFileModel)
+        {
+
+           return RedirectToAction("Index");
+        }
+
         public IActionResult Privacy()
         {
             return View();
