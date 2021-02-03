@@ -1,0 +1,2 @@
+Create storage account
+az storage accoutn create -n tetrisstorage -g rg_dbtest -l uksouth --sku standard_LRS --kind storagev2
