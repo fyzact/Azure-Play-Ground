@@ -1,2 +1,6 @@
 Create storage account
 az storage accoutn create -n tetrisstorage -g rg_dbtest -l uksouth --sku standard_LRS --kind storagev2
+Acces key(before create container you  must get access key) 
+Set Access key to varibale $key
+$ACCESSKEY=(az storage account keys list -n tetrisstorage --query  "[?keyName=='key1'].value" -o tsv)
+
