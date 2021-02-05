@@ -1,0 +1,1 @@
+az functionapp create -n (funtionappname)-g (resourse-group) -s (storageaccountname) -c (consumption plan location example ukwest) --runtime (example dotnet, node) --os-type (os exaple windows) --functions-version (version to --runtime. example --runtime dotnet, for .net core 3.1 fill 3)
