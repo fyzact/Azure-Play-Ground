@@ -1,5 +1,7 @@
 az login
 az appservice plan create -g "resoursegroup" -n "name" --sku "hosting plan F!,S1,P1" -l "location" --number-of-workers "instance number"
 az webapp create -p "appservice plan name" -g "reosurce group" -n "webb app name" -l (it's mean want to deploy git url)
+create deploymen slot to stating
+az webapp deploment slot create -s staging -n (name) -g (resourcegrpup)  --configuration-source (name)
 #to stream the log
 az webapp log tail -n tetrissolutions -g rg_fnctest
