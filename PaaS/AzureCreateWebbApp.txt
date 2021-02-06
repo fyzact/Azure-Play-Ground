@@ -3,5 +3,7 @@ az appservice plan create -g "resoursegroup" -n "name" --sku "hosting plan F!,S1
 az webapp create -p "appservice plan name" -g "reosurce group" -n "webb app name" -l (it's mean want to deploy git url)
 create deploymen slot to stating
 az webapp deploment slot create -s (stage-name) -n (webappname) -g (resourcegrpup)  --configuration-source (webappname)
+swap slot 
+az webapp deployment  slot swap -s staging --action swap  -n (webappName) -g (reosurcegroup) --target-slot (production)
 #to stream the log
 az webapp log tail -n tetrissolutions -g rg_fnctest
