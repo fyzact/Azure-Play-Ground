@@ -1,0 +1,2 @@
+Create Servicebus Namaspace
+az servicebus namespace create -n (name) -g (resourceName) -l uksouth --sku Basic
