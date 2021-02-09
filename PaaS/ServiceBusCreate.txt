@@ -1,2 +1,4 @@
 Create Servicebus Namaspace
 az servicebus namespace create -n (name) -g (resourceName) -l uksouth --sku Basic
+create queue
+az servicebus queue create -n (queue name) --namespace (tetrisqueue) -g rg_dbtest
